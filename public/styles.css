@@ -1,0 +1,11 @@
+body { background:#f7f7fb }
+.prewrap { white-space:pre-wrap }
+.card { border:0; border-radius:16px }
+.card-body { padding:1.25rem 1.5rem }
+.navbar .navbar-brand { font-weight:700 }
+form .form-label { font-weight:600 }
+.btn { border-radius:12px }
+@media (max-width: 576px){
+  h2 { font-size:1.25rem }
+  .card-body { padding:1rem }
+}
