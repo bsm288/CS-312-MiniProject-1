@@ -13,7 +13,8 @@ let nextId = 1
 
 app.get('/', (req, res) => {
   res.render('index', { posts })
-})
+}
+)
 
 app.post('/posts', (req, res) => {
   const { author, title, content } = req.body
@@ -26,14 +27,16 @@ app.post('/posts', (req, res) => {
   }
   posts.unshift(post)
   res.redirect('/')
-})
+}
+)
 
 app.get('/posts/:id/edit', (req, res) => {
   const id = Number(req.params.id)
   const post = posts.find(p => p.id === id)
   if (!post) return res.redirect('/')
   res.render('edit', { post })
-})
+}
+)
 
 app.post('/posts/:id/update', (req, res) => {
   const id = Number(req.params.id)
@@ -42,14 +45,17 @@ app.post('/posts/:id/update', (req, res) => {
   const { author, title, content } = req.body
   posts[i] = { ...posts[i], author, title, content, updatedAt: new Date().toLocaleString() }
   res.redirect('/')
-})
+}
+)
 
 app.post('/posts/:id/delete', (req, res) => {
   const id = Number(req.params.id)
   posts = posts.filter(p => p.id !== id)
   res.redirect('/')
-})
+}
+)
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`)
-})
+}
+)
